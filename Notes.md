@@ -6,6 +6,8 @@
 
 - SqlDependency example
 - Example: https://mousavi310.github.io/posts/a-refreshable-sql-server-configuration-provider-for-net-core/
+- https://www.npgsql.org/doc/wait.html
+
 
 - Change tokens https://learn.microsoft.com/en-us/aspnet/core/fundamentals/change-tokens?view=aspnetcore-9.0
 - Example https://learn.microsoft.com/en-us/aspnet/core/fundamentals/change-tokens?view=aspnetcore-9.0#monitor-cached-file-changes
