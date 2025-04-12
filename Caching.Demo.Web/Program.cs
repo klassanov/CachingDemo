@@ -1,4 +1,6 @@
 using Caching.Demo.Repository;
+using Caching.Demo.Web.Interfaces;
+using Caching.Demo.Web.Managers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddRepositoryServices(builder.Configuration);
+builder.Services.AddScoped<IProductsManager, ProductsManager>();
 
 var app = builder.Build();
 
