@@ -1,8 +1,6 @@
-﻿
-using Caching.Demo.Web.Interfaces;
-using Npgsql;
+﻿using Npgsql;
 
-namespace Caching.Demo.Web.Products
+namespace Caching.Demo.Web.GetProductsFeature
 {
     public class ProductChangedListener : BackgroundService
     {

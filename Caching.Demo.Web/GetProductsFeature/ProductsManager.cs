@@ -1,9 +1,8 @@
 ﻿using Caching.Demo.Repository.Entities;
 using Caching.Demo.Repository.Interfaces;
-using Caching.Demo.Web.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Caching.Demo.Web.Products
+namespace Caching.Demo.Web.GetProductsFeature
 {
     public class ProductsManager : IProductsManager
     {
@@ -40,8 +39,8 @@ namespace Caching.Demo.Web.Products
                 cache.Set(ProductsCacheKey, products, new MemoryCacheEntryOptions()
                                             .AddExpirationToken(changeToken)
                                             .RegisterPostEvictionCallback(OnProductsCacheEntryRemoved));
-                                            // Absolute Expiration can be set to make sure that this cache entry is not kept forever
-                                            //.SetAbsoluteExpiration(TimeSpan.FromMinutes(5)); 
+                // Absolute Expiration can be set to make sure that this cache entry is not kept forever
+                //.SetAbsoluteExpiration(TimeSpan.FromMinutes(5)); 
             }
 
             else

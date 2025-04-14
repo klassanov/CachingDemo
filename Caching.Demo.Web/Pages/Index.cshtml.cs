@@ -1,6 +1,6 @@
 using Caching.Demo.Repository.Entities;
 using Caching.Demo.Repository.Interfaces;
-using Caching.Demo.Web.Interfaces;
+using Caching.Demo.Web.GetProductsFeature;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

@@ -1,6 +1,5 @@
 using Caching.Demo.Repository;
-using Caching.Demo.Web.Interfaces;
-using Caching.Demo.Web.Products;
+using Caching.Demo.Web.GetProductsFeature;
 
 var builder = WebApplication.CreateBuilder(args);
 

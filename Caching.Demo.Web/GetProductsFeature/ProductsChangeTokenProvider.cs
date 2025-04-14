@@ -1,7 +1,6 @@
-﻿using Caching.Demo.Web.Interfaces;
-using Microsoft.Extensions.Primitives;
+﻿using Microsoft.Extensions.Primitives;
 
-namespace Caching.Demo.Web.Products
+namespace Caching.Demo.Web.GetProductsFeature
 {
     public class ProductsChangeTokenProvider : IProductsChangeTokenProvider
     {
