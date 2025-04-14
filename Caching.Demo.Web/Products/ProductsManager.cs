@@ -31,15 +31,17 @@ namespace Caching.Demo.Web.Products
 
             if (!cache.TryGetValue(ProductsCacheKey, out products!))
             {
+                logger.LogInformation("Cache miss for products. Data will be fetched from repository and cached.");
+
                 products = await productsRepository.GetAllAsync();
 
                 var changeToken = changeTokenProvider.GetChangeToken();
 
                 cache.Set(ProductsCacheKey, products, new MemoryCacheEntryOptions()
-                                            //.SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
-                                            .AddExpirationToken(changeToken));
-
-                logger.LogInformation("Cache miss for products. Data fetched from repository and cached.");
+                                            .AddExpirationToken(changeToken)
+                                            .RegisterPostEvictionCallback(OnProductsCacheEntryRemoved));
+                                            // Absolute Expiration can be set to make sure that this cache entry is not kept forever
+                                            //.SetAbsoluteExpiration(TimeSpan.FromMinutes(5)); 
             }
 
             else
@@ -48,6 +50,11 @@ namespace Caching.Demo.Web.Products
             }
 
             return products;
+        }
+
+        private void OnProductsCacheEntryRemoved(object key, object? value, EvictionReason reason, object? state)
+        {
+            logger.LogInformation("Cache entry removed: {key}, reason: {reason}", key, reason);
         }
     }
 }
