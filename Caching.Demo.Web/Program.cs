@@ -9,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddRepositoryServices(builder.Configuration);
 builder.Services.AddScoped<IProductsManager, ProductsManager>();
+builder.Services.AddSingleton<IProductsChangeTokenProvider, ProductsChangeTokenProvider>();
 builder.Services.AddHostedService<ProductChangedListener>();
 
 var app = builder.Build();

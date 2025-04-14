@@ -5,5 +5,7 @@ namespace Caching.Demo.Web.Interfaces
     public interface IProductsManager
     {
         Task<IEnumerable<Product>> GetAllProductsAsync();
+        
+        //void InvalidateCacheKey();
     }
 }

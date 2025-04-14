@@ -9,13 +9,19 @@ namespace Caching.Demo.Web.Products
     {
         private readonly IMemoryCache cache;
         private readonly IProductsRepository productsRepository;
+        private readonly IProductsChangeTokenProvider changeTokenProvider;
         private readonly ILogger<ProductsManager> logger;
         private const string ProductsCacheKey = "ProductsCacheKey";
 
-        public ProductsManager(IMemoryCache cache, IProductsRepository productsRepository, ILogger<ProductsManager> logger)
+        public ProductsManager(
+            IMemoryCache cache,
+            IProductsRepository productsRepository,
+            IProductsChangeTokenProvider changeTokenProvider,
+            ILogger<ProductsManager> logger)
         {
             this.cache = cache;
             this.productsRepository = productsRepository;
+            this.changeTokenProvider = changeTokenProvider;
             this.logger = logger;
         }
 
@@ -27,10 +33,11 @@ namespace Caching.Demo.Web.Products
             {
                 products = await productsRepository.GetAllAsync();
 
-                var cacheEntryOptions = new MemoryCacheEntryOptions()
-                    .SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
+                var changeToken = changeTokenProvider.GetChangeToken();
 
-                cache.Set(ProductsCacheKey, products, cacheEntryOptions);
+                cache.Set(ProductsCacheKey, products, new MemoryCacheEntryOptions()
+                                            //.SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
+                                            .AddExpirationToken(changeToken));
 
                 logger.LogInformation("Cache miss for products. Data fetched from repository and cached.");
             }
@@ -42,7 +49,5 @@ namespace Caching.Demo.Web.Products
 
             return products;
         }
-
-
     }
 }
