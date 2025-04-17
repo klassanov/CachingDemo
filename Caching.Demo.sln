@@ -7,13 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Demo.Web", "Caching
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9D0C973-4D06-4C84-B407-C0332E9F1039}"
 	ProjectSection(SolutionItems) = preProject
-		Directory.Packages.props = Directory.Packages.props
 		Commands.txt = Commands.txt
+		Directory.Packages.props = Directory.Packages.props
 		Notes.md = Notes.md
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Demo.Repository", "Caching.Demo.Repository\Caching.Demo.Repository.csproj", "{7EA75443-3611-4D3B-9033-EF1B9DAC6702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Demo.WebAPI", "Caching.Hybrid.Demo.WebAPI\Caching.Hybrid.Demo.WebAPI.csproj", "{E32FDE61-9632-4415-9FCA-9335ABD8156A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +31,15 @@ Global
 		{7EA75443-3611-4D3B-9033-EF1B9DAC6702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EA75443-3611-4D3B-9033-EF1B9DAC6702}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EA75443-3611-4D3B-9033-EF1B9DAC6702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DB2CA07-A8F8-4D8F-88F1-EEA8C42B579C}
 	EndGlobalSection
 EndGlobal
