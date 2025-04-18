@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Caching.Hybrid;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Caching.Hybrid.Demo.WebAPI
 {
-    public static class ApiConfiguration
+    public static class EndpointsConfiguration
     {
         private const string productsKey = "products";
 
@@ -18,6 +19,12 @@ namespace Caching.Hybrid.Demo.WebAPI
                     factory: ProductsFactory);
 
                 return Results.Ok(products);
+            });
+
+            app.MapGet("/localcache", async (IMemoryCache memoryCache) =>
+            {
+                var localCache = memoryCache as MemoryCache;
+                return Results.Ok(value: localCache!.Keys);
             });
 
             app.MapPost("/invalidate/products", async (HybridCache cache) =>
