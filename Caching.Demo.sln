@@ -15,7 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Demo.Repository", "Caching.Demo.Repository\Caching.Demo.Repository.csproj", "{7EA75443-3611-4D3B-9033-EF1B9DAC6702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Demo.WebAPI", "Caching.Hybrid.Demo.WebAPI\Caching.Hybrid.Demo.WebAPI.csproj", "{E32FDE61-9632-4415-9FCA-9335ABD8156A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Demo.Aspire.WebAPI", "Caching.Hybrid.Demo.Aspire.WebAPI\Caching.Hybrid.Demo.Aspire.WebAPI.csproj", "{E32FDE61-9632-4415-9FCA-9335ABD8156A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Demo.Aspire.AppHost", "Caching.Hybrid.Demo.Aspire\Caching.Hybrid.Demo.Aspire.AppHost\Caching.Hybrid.Demo.Aspire.AppHost.csproj", "{A06EF4E5-DE76-4FC8-8C40-BE347D3C508C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Demo.Aspire.ServiceDefaults", "Caching.Hybrid.Demo.Aspire\Caching.Hybrid.Demo.Aspire.ServiceDefaults\Caching.Hybrid.Demo.Aspire.ServiceDefaults.csproj", "{8F9A9B1B-C211-AACC-39A0-FA88D6078BC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32FDE61-9632-4415-9FCA-9335ABD8156A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06EF4E5-DE76-4FC8-8C40-BE347D3C508C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06EF4E5-DE76-4FC8-8C40-BE347D3C508C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06EF4E5-DE76-4FC8-8C40-BE347D3C508C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06EF4E5-DE76-4FC8-8C40-BE347D3C508C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9A9B1B-C211-AACC-39A0-FA88D6078BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9A9B1B-C211-AACC-39A0-FA88D6078BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9A9B1B-C211-AACC-39A0-FA88D6078BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9A9B1B-C211-AACC-39A0-FA88D6078BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

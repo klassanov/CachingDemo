@@ -1,5 +1,4 @@
-using Caching.Hybrid.Demo.WebAPI;
-
+using Caching.Hybrid.Demo.Aspire.WebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 

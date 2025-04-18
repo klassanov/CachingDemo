@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Caching.Hybrid.Demo.WebAPI
+namespace Caching.Hybrid.Demo.Aspire.WebAPI
 {
     public static class EndpointsConfiguration
     {
