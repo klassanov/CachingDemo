@@ -1,6 +1,9 @@
 @Caching.Hybrid.Demo.WebAPI_HostAddress = http://localhost:5184
 
-GET {{Caching.Hybrid.Demo.WebAPI_HostAddress}}/weatherforecast/
+GET {{Caching.Hybrid.Demo.WebAPI_HostAddress}}/products/
 Accept: application/json
 
 ###
+POST {{Caching.Hybrid.Demo.WebAPI_HostAddress}}/invalidate/products/
+Accept: application/json
+

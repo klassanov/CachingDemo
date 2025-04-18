@@ -1,4 +1,5 @@
-using Microsoft.Extensions.Caching.Hybrid;
+using Caching.Hybrid.Demo.WebAPI;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,21 +30,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 //Minimal APIs configuration
-app.MapGet("/", () =>  "Hello world!" );
-
-app.MapGet("/products", async (HybridCache cache) =>
-{
-    var products = 
-    await cache.GetOrCreateAsync(
-        key: "products",
-        factory: async (cancellationToken) => 
-        {
-            return await Task.FromResult<List<string>>(["product-1", "product-2", "product-3"]);
-        });
-
-    return Results.Ok(products);
-});
+app.ConfigureMinimalAPIs();
 
 //app.MapControllers();
 
 app.Run();
+
