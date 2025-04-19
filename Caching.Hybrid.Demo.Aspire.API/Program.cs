@@ -13,7 +13,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = "localhost:6379";
+    //options.Configuration = "localhost:6379";
     options.Configuration = builder.Configuration.GetConnectionString("redis");
 });
 
@@ -37,5 +37,6 @@ app.UseAuthorization();
 //app.MapControllers();
 
 app.MapMinimalAPIs();
+
 
 app.Run();
