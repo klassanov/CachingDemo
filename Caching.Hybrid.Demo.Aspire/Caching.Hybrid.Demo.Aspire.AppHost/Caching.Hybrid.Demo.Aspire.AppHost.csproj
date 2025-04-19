@@ -16,4 +16,8 @@
     <PackageReference Include="Aspire.Hosting.Redis" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Caching.Hybrid.Demo.Aspire.API\Caching.Hybrid.Demo.Aspire.API.csproj" />
+  </ItemGroup>
+
 </Project>
