@@ -31,7 +31,5 @@ app.UseAuthorization();
 //Minimal APIs configuration
 app.ConfigureMinimalAPIs();
 
-//app.MapControllers();
-
 app.Run();
 

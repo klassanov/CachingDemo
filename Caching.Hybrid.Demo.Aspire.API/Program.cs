@@ -1,5 +1,6 @@
 using Caching.Hybrid.Demo.Aspire.API;
 using Caching.Hybrid.Demo.Aspire.ServiceDefaults;
+using Microsoft.Extensions.Caching.Hybrid;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +14,16 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    //options.Configuration = "localhost:6379";
     options.Configuration = builder.Configuration.GetConnectionString("redis");
 });
 
-builder.Services.AddHybridCache();
-
+builder.Services.AddHybridCache(options =>
+{
+    options.DefaultEntryOptions = new HybridCacheEntryOptions
+    {
+        Expiration = TimeSpan.FromMinutes(60)
+    };
+});
 
 var app = builder.Build();
 
@@ -34,9 +39,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-//app.MapControllers();
-
 app.MapMinimalAPIs();
-
 
 app.Run();
